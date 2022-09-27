@@ -5,6 +5,9 @@ const port = 3000;
 app.use(express.static(__dirname + '/public/'));
 
 app.get("/", (request, response) => {
+    response.writeHeader(200, {
+        'Content-Type': 'application/javascript'
+    })
     response.sendFile(__dirname + 'public/index.html');
 });
 
